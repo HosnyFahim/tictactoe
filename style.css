@@ -20,23 +20,36 @@ body {
     background-image: url(img/background.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    position: relative;
 }
 
 table {
     border-collapse: collapse;
+    position: relative;
     margin: 0 auto;
-    width: 400px;
-    height: 400px;
     margin-top: 20px;
 }
 
 table td {
     padding: 1rem;
     border: 5px solid black;
+    position: relative;
 }
 
 tr {
-    width: 400px;
+    width: 399px;
+    position: relative;
+}
+
+td {
+    width: 133px;
+    height: 133px;
+    position: relative;
+    cursor: pointer;
+}
+
+td:hover {
+    background-color: rgba(135, 39, 136, 0.1);
 }
 
 table tr:first-child td {
@@ -53,4 +66,21 @@ table tr:last-child td {
 
 table tr td:last-child {
     border-right: 0;
+}
+
+.shape-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.shape {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+}
+
+.d-none {
+    display: none;
 }

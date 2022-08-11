@@ -3,12 +3,61 @@ body {
 }
 
 .header {
-    background: linear-gradient(to right, indigo, #d68692, red, rgb(218, 169, 78));
+    background: linear-gradient(to right, indigo, #cc3a50, rgb(230, 141, 69), rgb(218, 169, 78));
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
-    font-size: 2.5em;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
-    margin-top: -200px;
+}
+
+h1 {
+    font-size: 3.5em;
+    margin: 0;
+}
+
+p {
+    margin: 0;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.player-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+}
+
+.player-1 {
+    margin-left: 60px;
+    margin-right: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.inactive {
+    opacity: 0.5;
+}
+
+.player-1 img {
+    width: 80px;
+    margin-right: 8px;
+}
+
+.player-2 {
+    margin-left: 60px;
+    margin-right: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.player-2 img {
+    width: 80px;
+    margin-right: 8px;
 }
 
 .game-container {
@@ -21,6 +70,10 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
+}
+
+.table-container {
+    margin-top: 100px;
 }
 
 table {
@@ -49,7 +102,8 @@ td {
 }
 
 td:hover {
-    background-color: rgba(135, 39, 136, 0.1);
+    background-color: rgba(250, 152, 6, 0.2);
+    border-radius: 50px;
 }
 
 table tr:first-child td {
@@ -83,4 +137,19 @@ table tr td:last-child {
 
 .d-none {
     display: none;
+}
+
+.horitontal-line {
+    height: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 500px;
+    position: absolute;
+    transform: scaleX(0.0);
+    transition: transform 225ms ease-in-out;
+}
+
+.make-vertical {
+    transform: rotate(90deg);
+    position: absolute;
+    transform: scaleX(0.0);
 }

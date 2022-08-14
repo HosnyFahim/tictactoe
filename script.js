@@ -1,42 +1,55 @@
 let fields = [];
+let gameOver = false;
 let currentShape = 'cross';
 let winner;
 
+
 function fillShape(id) {
-    if (!fields[id]) {
+    if (!fields[id] && !gameOver) {
         if (currentShape == 'cross') {
             currentShape = 'circle';
-            document.getElementById('player-1').classList.remove('inactive'); // mit diesr Zeilen fügen wir und entfernen wir ein CSS Style!!!
-            document.getElementById('player-2').classList.add('inactive'); // mit diesr Zeilen fügen wir und entfernen wir ein CSS Style!!!
-        } else {
-            currentShape = 'cross';
             document.getElementById('player-2').classList.remove('inactive'); // mit diesr Zeilen fügen wir und entfernen wir ein CSS Style!!!
             document.getElementById('player-1').classList.add('inactive'); // mit diesr Zeilen fügen wir und entfernen wir ein CSS Style!!!
+        } else {
+            currentShape = 'cross';
+            document.getElementById('player-1').classList.remove('inactive'); // mit diesr Zeilen fügen wir und entfernen wir ein CSS Style!!!
+            document.getElementById('player-2').classList.add('inactive'); // mit diesr Zeilen fügen wir und entfernen wir ein CSS Style!!!
         }
 
         fields[id] = currentShape;
         draw();
         checkForWin();
+
     }
 }
+
+
 
 //**Draw Function */
 function draw() {
     for (let i = 0; i < fields.length; i++) {
         if (fields[i] == 'circle') {
             document.getElementById('circle-' + i).classList.remove('d-none'); // mit der Zeile wird der Kreisel beim Klicken angezeigt!
-        } else {
-            document.getElementById('circle-' + i).classList.add('d-none');
-
         }
 
         if (fields[i] == 'cross') {
             document.getElementById('cross-' + i).classList.remove('d-none'); // Mit der Zeile wird der Kreuz beim Klicken angezeigt!
-        } else {
-            document.getElementById('cross-' + i).classList.add('d-none');
-        }
 
+
+        }
+        if (noWinner()) {
+            gameOver = true;
+            setTimeout(function() {
+                document.getElementById('game-over').classList.remove('d-none');
+            }, 1000);
+
+        }
     }
+}
+
+//**No Winner Function */
+function noWinner() {
+    return GameDrow = (fields.filter(String).length == 9) ? true : false;
 }
 
 //**Winner Function */
@@ -84,9 +97,19 @@ function checkForWin() {
         document.getElementById('line-7').style.transform = 'rotate(-45deg) scaleX(1)';
     }
 
+
     if (!!winner) {
-        console.log('Gewonnen:', winner);
+        gameOver = true;
+        setTimeout(function() {
+            document.getElementById('game-over').classList.remove('d-none');
+        }, 1000);
+
     }
 
+}
 
+//**Restart Function */
+function restart() {
+    fullRest = document.getElementById('restart-btn');
+    location.reload();
 }

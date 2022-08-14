@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/tic-tac-toe.jpg">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="media.css">
     <link rel="stylesheet" href="fonts.css">
@@ -13,10 +14,10 @@
 </head>
 
 <body>
-
-
-
-
+    <div class="game-over-container d-none" id="game-over">
+        <img class="game-over" src="img/game-over.png">
+        <button class="restart-btn" onclick="restart()">Restart </button>
+    </div>
     <div class="game-container">
         <div class="header">
             <h1>
@@ -29,22 +30,23 @@
         </div>
 
         <div class="player-container">
-            <div class="player-1 inactive" id="player-1">
+            <div class="player-1" id="player-1">
                 <img src="img/circle.png"> Player 1
             </div>
 
-            <div class="player-2" id="player-2">
+            <div class="player-2 inactive" id="player-2">
                 <img src="img/cross.png"> Player 2
             </div>
         </div>
         <div id="line-0" class="horitontal-line" style="top: 506px;"></div>
         <div id="line-1" class="horitontal-line" style="top: 677px;"></div>
         <div id="line-2" class="horitontal-line" style="top: 846px;"></div>
-        <div id="line-3" class="horitontal-line make-vertical" style="top: 677px; left: 540px;"></div>
+        <div id="line-3" class="horitontal-line make-vertical" style="top: 677px; right: 577px;"></div>
         <div id="line-4" class="horitontal-line make-vertical" style="top: 677px;"></div>
-        <div id="line-5" class="horitontal-line make-vertical" style="top: 677px; right: 540px;"></div>
-        <div id="line-6" class="horitontal-line" style="top: 677px; transform: rotate(45deg) scaleX(0.0);"></div>
-        <div id="line-7" class="horitontal-line" style="top: 677px; transform: rotate(-45deg) scaleX(0.0);"></div>
+        <div id="line-5" class="horitontal-line make-vertical" style="top: 677px; left: 577px;"></div>
+        <div id="line-6" class="horitontal-line deg" style="top: 677px; transform: rotate(45deg) scaleX(0.0);"></div>
+        <div id="line-7" class="horitontal-line deg-1" style="top: 677px; transform: rotate(-45deg) scaleX(0.0);"></div>
+
         <table class="table-container">
             <tr>
                 <td onclick="fillShape(0)">
@@ -109,6 +111,7 @@
                 </td>
             </tr>
         </table>
+    </div>
     </div>
 
 

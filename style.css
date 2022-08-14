@@ -7,6 +7,7 @@ body {
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+    flex-wrap: wrap;
 }
 
 h1 {
@@ -26,6 +27,7 @@ p {
     align-items: center;
     margin-top: 40px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+    flex-wrap: wrap;
 }
 
 .player-1 {
@@ -69,6 +71,7 @@ p {
     background-image: url(img/background.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    flex-wrap: wrap;
     position: relative;
 }
 
@@ -78,7 +81,6 @@ p {
 
 table {
     border-collapse: collapse;
-    position: relative;
     margin: 0 auto;
     margin-top: 20px;
 }
@@ -86,18 +88,15 @@ table {
 table td {
     padding: 1rem;
     border: 5px solid black;
-    position: relative;
 }
 
 tr {
     width: 399px;
-    position: relative;
 }
 
 td {
     width: 133px;
     height: 133px;
-    position: relative;
     cursor: pointer;
 }
 
@@ -146,10 +145,65 @@ table tr td:last-child {
     position: absolute;
     transform: scaleX(0.0);
     transition: transform 225ms ease-in-out;
+    z-index: 1;
 }
 
 .make-vertical {
     transform: rotate(90deg);
-    position: absolute;
     transform: scaleX(0.0);
+    position: absolute !important;
+}
+
+.game-over-container {
+    flex-wrap: wrap !important;
+}
+
+.game-over {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 60px;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    height: 70%;
+    z-index: 2;
+    animation: zoomIn 225ms ease-in-out;
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0);
+    }
+    to {
+        opacity: 0;
+        transform: scale(1);
+    }
+}
+
+.restart-btn {
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    background-color: #1C0B7F;
+    z-index: 2;
+    width: 260px;
+    height: 100px;
+    color: white;
+    font-size: 36px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 100px;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+}
+
+.restart-btn:hover {
+    background-color: rgb(67, 67, 219);
 }

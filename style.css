@@ -28,6 +28,7 @@ p {
     margin-top: 40px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
     flex-wrap: wrap;
+    position: relative;
 }
 
 .player-1 {
@@ -72,11 +73,15 @@ p {
     background-repeat: no-repeat;
     background-size: cover;
     flex-wrap: wrap;
+}
+
+.game-content {
     position: relative;
 }
 
 .table-container {
     margin-top: 100px;
+    position: relative;
 }
 
 table {
